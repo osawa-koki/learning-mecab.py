@@ -1,0 +1,4 @@
+fastapi
+uvicorn[standard]
+MeCab-python3
+unidic
