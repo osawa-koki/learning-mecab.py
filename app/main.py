@@ -47,7 +47,7 @@ def mecab(text: str) -> List[MecabResult]:
 
 
 app.mount("/api", app)
-app.mount("/", StaticFiles(directory="www", html=True), name="www")
+app.mount("/", StaticFiles(directory="./www/", html=True), name="www")
 
 # Run the FastAPI app
 if __name__ == "__main__":
