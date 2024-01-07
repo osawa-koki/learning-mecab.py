@@ -1,7 +1,6 @@
 from typing import List
 
 import MeCab
-import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -16,10 +15,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-HOST = "0.0.0.0"
-PORT = 8000
 
 
 class MecabResult(BaseModel):
@@ -48,7 +43,3 @@ def mecab(text: str) -> List[MecabResult]:
 
 app.mount("/api", app)
 app.mount("/", StaticFiles(directory="./www/", html=True), name="www")
-
-# Run the FastAPI app
-if __name__ == "__main__":
-    uvicorn.run(app, host=HOST, port=PORT, log_level="info")
