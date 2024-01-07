@@ -12,6 +12,11 @@ DevContainerに入り、以下のコマンドを実行します！
 ./entrypoint.sh --reload
 ```
 
-以下のURLにアクセスすると、実行結果を確認できます！  
+## 本番用実行
 
-`http://localhost:8000/api/mecab?text=私は、システムエンジニアです。`  
+以下のコマンドを実行します！  
+
+```shell
+docker build -t learning-mecab-py .
+docker run --rm -d -p 8000:8000 --name learning-mecab-py learning-mecab-py
+```
