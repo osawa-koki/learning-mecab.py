@@ -1,10 +1,11 @@
+from typing import List
+
+import MeCab
+import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-from typing import List
-import MeCab
-import uvicorn
 
 app = FastAPI()
 
@@ -34,17 +35,19 @@ def mecab(text: str) -> List[MecabResult]:
     results = []
     while node:
         surface = node.surface
-        results.append(MecabResult(
-            surface=surface,
-            feature=node.feature,
-        ))
+        results.append(
+            MecabResult(
+                surface=surface,
+                feature=node.feature,
+            )
+        )
         node = node.next
     results = results[1:-1]
     return results
 
 
 app.mount("/api", app)
-app.mount("/", StaticFiles(directory="www", html=True), name="www")
+app.mount("/", StaticFiles(directory="./www/", html=True), name="www")
 
 # Run the FastAPI app
 if __name__ == "__main__":
