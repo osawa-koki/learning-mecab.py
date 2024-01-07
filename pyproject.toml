@@ -11,6 +11,8 @@ packages = [{include = "learning_mecab"}]
 python = "3.11.x"
 mecab-python3 = "^1.0.8"
 unidic = "^1.1.0"
+fastapi = "^0.108.0"
+uvicorn = {extras = ["standard"], version = "^0.25.0"}
 
 [build-system]
 requires = ["poetry-core"]
