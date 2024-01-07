@@ -34,10 +34,12 @@ def mecab(text: str) -> List[MecabResult]:
     results = []
     while node:
         surface = node.surface
-        results.append(MecabResult(
-            surface=surface,
-            feature=node.feature,
-        ))
+        results.append(
+            MecabResult(
+                surface=surface,
+                feature=node.feature,
+            )
+        )
         node = node.next
     results = results[1:-1]
     return results
