@@ -4,6 +4,8 @@
 
 [![ci](https://github.com/osawa-koki/learning-mecab.py/actions/workflows/ci.yml/badge.svg)](https://github.com/osawa-koki/learning-mecab.py/actions/workflows/ci.yml)
 
+![成果物](./docs/images/fruit.gif)  
+
 ## 実行方法
 
 DevContainerに入り、以下のコマンドを実行します！  
