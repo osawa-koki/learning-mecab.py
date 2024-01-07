@@ -20,7 +20,7 @@
   "forwardPorts": [8000],
 
   // Uncomment the next line to run commands after the container is created.
-  "postCreateCommand": "cat /etc/os-release && python --version && poetry --version && poetry install --no-root && poetry run python -m unidic download",
+  "postCreateCommand": "cat /etc/os-release && python --version && poetry --version && poetry install --no-root && poetry run python -m unidic download && chmod +x ./entrypoint.sh",
 
   // Configure tool-specific properties.
   "customizations": {
