@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "learning-mecab-py"
+version = "0.1.0"
+description = "🛖🛖🛖 MeCabを使って形態素解析を行うPythonプログラムです！"
+authors = ["osawa-koki <koki@osawa.dev>"]
+license = "Apache-2.0"
+readme = "README.md"
+packages = [{include = "learning_mecab"}]
+
+[tool.poetry.dependencies]
+python = "3.11.x"
+mecab-python3 = "^1.0.8"
+unidic = "^1.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
